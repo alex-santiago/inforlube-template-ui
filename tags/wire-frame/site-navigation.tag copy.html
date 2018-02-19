@@ -1,0 +1,74 @@
+<site-navigation>
+  <!-- component html code -->
+  <div class="site-side-menu">
+    <nav class="navigation-main-menu" if={hasItens}>
+      <img class="image-logo" src="./images/logo.Inforlube.white.png" alt="Inforlube Logo">
+      <ul class="navigation-main-menu__ul">
+        <li class="navigation-main-menu__ul__li" each="{ item in menuparent }" onclick={clickItem}><span class="navigation-main-menu-description">{ item.description }</span>
+          <nav class="navigation-main-menu-children" if={(item.children.length > 0)}>
+            <ul class="navigation-main-menu__ul-children" each="{ child in item.children }" >
+              <li class="navigation-main-menu__ul__li-children" onclick={clickItem}>{ child.description }</li>
+            </ul>
+          </nav>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- component javascript code -->
+  <script>
+
+    const tag = this;
+    const showMenuBar = true;
+    const menuItens = ` [
+        { "id": "item1", "description": "File", "route": "/", "children": [] },
+        { "id": "item2", "description": "Edit", "route": "/", "children": [
+          { "description": "New", "route": "/"},
+          { "description": "Save", "route": "/"}
+        ] },
+        { "id": "item3", "description": "View", "route": "/", "children": [] },
+        { "id": "item4", "description": "Selection", "route": "/", "children": [
+          { "description": "Clear", "route": "/"}
+        ] }
+      ] `;
+
+    this.on('mount', function() {
+      tag.menuparent = JSON.parse(menuItens);
+      tag.hasItens = checkItems();
+      // document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-hidden");
+      // console.log('nav');
+      // console.log(tag.menuparent);
+      tag.update();
+    });
+
+    this.on('before-mount', function() {
+    });
+
+    // checks if there is a menu to show and if there are menu items for the menu
+    function checkItems () {
+      if (tag.menuparent.length > 0 ) {
+       return ( showMenuBar ? true : false);
+      }
+      else {
+        return false;
+      }
+    }
+
+    clickItem ( e ) {
+      if ( (e.item.child == null) || (e.item.child == undefined) ) {
+        console.log('PARENT clicked!');
+        console.log(e.item.item);
+        console.log(e.item.item.id);
+        console.log(e.item.item.route);
+      }
+      else {
+        console.log('CHILD clicked!');
+        console.log(e.item);
+        console.log(e.item.child.description);
+        console.log(e.item.child.route);
+        e.stopPropagation();
+      }
+    }
+
+  </script>
+</site-navigation>

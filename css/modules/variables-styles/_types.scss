@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------
+# Typography Variables styles
+--------------------------------------------------------------*/
+
+// Main body					14 points
+// Main Headers				250% more than main body copy (35 points)
+// Secondary Headers			175% more than main body copy (25 points)
+// Navigation elements			165% more than main body copy (23 points)
+// Secondary navigation menus	140% more than main body copy (20 points)
+// Big Text					Text elements that are used to really attract
+// Art Type					Banners or logos
+
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+$font-header-title-mobile: 0.75rem;
+$font-header-title-tablet: 0.85rem;
+$font-header-title-full: 1rem;
+
+$font-header-navigation-mobile: 0.75rem;
+$font-header-navigation-tablet: 0.85rem;
+$font-header-navigation-full: 1.2rem;
+
+$font-header-toolbar-mobile: 1.2rem;
+$font-header-toolbar-tablet: 1.35rem;
+$font-header-toolbar-full: 1.5rem;
+
+$font-header-mobile: 12px;
+$font-header-tablet: 13px;
+$font-header-full: 14px;
+
+/*--------------------------------------------------------------
+# MAIN CONTENT
+--------------------------------------------------------------*/
+$font-main-body-mobile: 14px;
+$font-main-body-tablet: 14px;
+$font-main-body-full: 14px;
+
+/*--------------------------------------------------------------
+# SITE NAVIGATION
+--------------------------------------------------------------*/
+$font-site-navigation-mobile: 0.75rem;
+$font-site-navigation-tablet: 0.85rem;
+$font-site-navigation-full: 1.2rem;
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+$font-footer-mobile: 11px;
+$font-footer-tablet: 12px;
+$font-footer-full: 12.5px;

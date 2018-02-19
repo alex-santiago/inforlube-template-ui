@@ -1,0 +1,121 @@
+<site-navigation>
+  <style>
+  /* Dropdown Button */
+  .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+      position: relative;
+      display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+  }
+  </style>
+
+  <!-- component html code -->
+  <div class="site-side-menu">
+    <nav class="navigation-main-menu" if={hasItens}>
+      <img class="image-logo" src="./images/logo.Inforlube.white.png" alt="Inforlube Logo">
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- component javascript code -->
+  <script>
+
+    const tag = this;
+    const showMenuBar = true;
+    const menuItens = ` [
+        { "id": "item1", "description": "File", "route": "/", "children": [] },
+        { "id": "item2", "description": "Edit", "route": "/", "children": [
+          { "description": "New", "route": "/"},
+          { "description": "Save", "route": "/"}
+        ] },
+        { "id": "item3", "description": "View", "route": "/", "children": [] },
+        { "id": "item4", "description": "Selection", "route": "/", "children": [
+          { "description": "Clear", "route": "/"}
+        ] }
+      ] `;
+
+    this.on('mount', function() {
+      tag.menuparent = JSON.parse(menuItens);
+      tag.hasItens = checkItems();
+      // document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-hidden");
+      // console.log('nav');
+      // console.log(tag.menuparent);
+      tag.update();
+    });
+
+    this.on('before-mount', function() {
+    });
+
+    // checks if there is a menu to show and if there are menu items for the menu
+    function checkItems () {
+      if (tag.menuparent.length > 0 ) {
+       return ( showMenuBar ? true : false);
+      }
+      else {
+        return false;
+      }
+    }
+
+    clickItem ( e ) {
+      if ( (e.item.child == null) || (e.item.child == undefined) ) {
+        console.log('PARENT clicked!');
+        console.log(e.item.item);
+        console.log(e.item.item.id);
+        console.log(e.item.item.route);
+      }
+      else {
+        console.log('CHILD clicked!');
+        console.log(e.item);
+        console.log(e.item.child.description);
+        console.log(e.item.child.route);
+        e.stopPropagation();
+      }
+    }
+
+  </script>
+</site-navigation>

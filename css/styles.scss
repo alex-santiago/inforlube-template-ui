@@ -1,0 +1,129 @@
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Variables
+# Typography
+# Accessibility
+# Clearings
+# Elements
+# Navigation
+# Header
+# Body
+# Footer
+# Forms
+# Media
+# MEDIA QUERIES SECTION
+--------------------------------------------------------------*/
+@import "modules/mixins";
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "modules/normalize";
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "modules/variables";
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+// @import "modules/typography";
+body {
+  font-family: "Century Gothic", CenturyGothic, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: $font-main-body-mobile;
+  min-width: 200px;
+}
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "modules/elements";
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "modules/navigation";
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "modules/header";
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+// @import "modules/body";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $inforlub-white;
+  // min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "modules/footer";
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "modules/forms";
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "modules/media";
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------
+# MEDIA QUERIES SECTION
+--------------------------------------------------------------*/
+// @import "modules/media-query";
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  body {
+    font-size: $font-main-body-tablet;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  body {
+    font-size: $font-main-body-full;
+  }
+}
+/*--------------------------------------------------------------
+# TAGs STYLE SHEETS
+--------------------------------------------------------------*/
+@import "../tags/wire-frame/wrapper";
+@import "../tags/wire-frame/site-header";
+@import "../tags/wire-frame/site-footer";
+@import "../tags/wire-frame/site-navigation";
+
+/*
+TYPE GUIDELINES:
+
+Main body					14 points
+Main Headers				250% more than main body copy (35 points)
+Secondary Headers			175% more than main body copy (25 points)
+Navigation elements			165% more than main body copy (23 points)
+Secondary navigation menus	140% more than main body copy (20 points)
+Big Text					Text elements that are used to really attract
+Art Type					Banners or logos
+
+Principles:
+ - Contrast
+ - Alignment
+ - Proximity
+ - Repetition
+ */

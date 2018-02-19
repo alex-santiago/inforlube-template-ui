@@ -1,0 +1,1 @@
+var host = "http://all2sys.com/dev/admin/api/";

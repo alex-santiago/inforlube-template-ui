@@ -1,0 +1,96 @@
+<site-header>
+  <!-- component html code -->
+  <header class="site-header__header">
+    <div class="main-title-wrapper">
+      <div class="system-title">
+        <h1 class="system-title__h1">Inforlube Dashboard UI</h1>
+      </div>
+      <nav class="navigation" if={hasItens}>
+        <!-- <i class="navigation__i fa fa-bars fa-lg" src="#" alt="main-menu" onclick={clickMenubar}><span class="screen-reader-text">Menu</span></i> -->
+        <ul class="navigation__ul">
+          <!-- <li class="navigation__ul__li" each="{ item in menu }" onclick={clickItem}>{ item.description }</li> -->
+          <li class="navigation__ul__li fa fa-bars fa-lg" onclick={clickMenubar}>
+            <!-- <span class="navigation__ul__li-toggle">Menu</span> -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="tool-bar">
+      <nav>
+        <ul class="tool-bar__ul">
+          <li class="tool-bar__ul__li fa fa-th fa-lg"><span class="screen-reader-text">Apps</span></li>
+          <li class="tool-bar__ul__li fa fa-bell-o fa-lg"><span class="screen-reader-text">Notifications</span></li>
+          <li class="tool-bar__ul__li fa fa-user-circle-o fa-lg"><span class="screen-reader-text">User-profile</span></li>
+        </ul>
+        <!-- <i class="tool-bar__i fa fa-bars fa-lg" src="#" alt="main-menu" onclick={clickMenubar}><span class="screen-reader-text">Menu</span></i> -->
+      </nav>
+<!--
+      <i class="tool-bar__i fa fa-th fa-lg" src="#" alt="apps"><span class="screen-reader-text">Apps</span></i>
+      <i class="tool-bar__i fa fa-bell-o fa-lg" src="#" alt="notifications"><span class="screen-reader-text">Notifications</span></i>
+      <i class="tool-bar__i fa fa-user-circle-o fa-lg" src="#" alt="user-profile"><span class="screen-reader-text">User-profile</span></i>
+       -->
+    </div>
+  </header>
+
+  <!-- component javascript code -->
+  <script>
+    const tag = this;
+
+    const showMenuBar = true;
+    const menuItens = ` [
+        { "id": "item1", "description": "File", "route": "/" },
+        { "id": "item2", "description": "Edit", "route": "/" },
+        { "id": "item3", "description": "View", "route": "/" },
+        { "id": "item4", "description": "Selection", "route": "/" }
+      ] `;
+
+    this.on('mount', function() {
+      tag.menu = JSON.parse(menuItens);
+      tag.hasItens = checkItems();
+      // console.log('header');
+      // console.log(tag.menu);
+
+      tag.update();
+    });
+
+    this.on('before-mount', function() {
+    });
+
+    // checks if there is a menu to show and if there are menu items for the menu
+    function checkItems () {
+      if (tag.menu.length > 0 ) {
+       return ( showMenuBar ? true : false);
+      }
+      else {
+        return false;
+      }
+    }
+
+    clickMenubar( e ) {
+      console.log('clicked!');
+      console.log(document.getElementsByClassName('site-side-menu')[0].classList);
+      if ( document.getElementsByClassName('site-side-menu')[0].classList.contains("site-side-menu-off") ) {
+        document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-on");
+        document.getElementsByClassName('site-side-menu')[0].classList.remove("site-side-menu-off");
+      } else {
+        document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-off");
+        document.getElementsByClassName('site-side-menu')[0].classList.remove("site-side-menu-on");
+      }
+
+      // if ( document.getElementsByClassName('site-side-menu')[0].classList.contains("site-side-menu-hidden") ) {
+      //   document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-shown");
+      //   document.getElementsByClassName('site-side-menu')[0].classList.remove("site-side-menu-hidden");
+      // } else {
+      //   document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-hidden");
+      //   document.getElementsByClassName('site-side-menu')[0].classList.remove("site-side-menu-shown");
+      // }
+    }
+
+    clickItem ( e ) {
+      console.log('clicked!');
+      console.log(e.item.item.id);
+      console.log(e.item.item.route);
+    }
+
+  </script>
+</site-header>

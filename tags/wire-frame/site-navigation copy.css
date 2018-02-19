@@ -1,0 +1,201 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Accessibility
+# Clearings
+# Elements
+# Navigation
+# Header
+# Body
+# Footer
+# Forms
+# Media
+# MEDIA QUERIES SECTION
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+.site-navigation {
+  font-size: $font-site-navigation-mobile;
+  font-weight: 400;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.site-navigation {
+}
+
+.site-side-menu {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: $inforlub-dark-background;
+  color: $inforlub-light-grey;
+  margin: 0;
+  padding: 5px 0 5px 0;
+  border-top: 1px solid $inforlub-light-grey;
+  border-bottom: 1px solid $inforlub-light-grey;
+}
+.site-side-menu-on {
+  display: flex;
+  flex-flow: column nowrap;
+  transition: display 5s;
+}
+.site-side-menu-off {
+  display: none;
+  transition: display 5s;
+}
+
+.navigation-main-menu {
+  position: relative;
+}
+
+.navigation-main-menu__ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.navigation-main-menu__ul__li {
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+  flex: 1 1 auto;
+}
+
+.navigation-main-menu__ul__li:hover {
+  background-color: $inforlub-dark-grey;
+  cursor: pointer;
+  transition: background-color .25s;
+}
+
+.navigation-main-menu-children {
+  background-color: #fff;
+  position: absolute;
+}
+
+.navigation-main-menu__ul-children {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.navigation-main-menu__ul__li-children {
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+  flex: 1 1 auto;
+}
+
+.navigation-main-menu__ul__li-children:hover {
+  background-color: $inforlub-dark-grey;
+  cursor: pointer;
+  transition: background-color .25s;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.image-logo {
+  max-width: 200px;
+  display: flex;
+  flex: 0 1 auto;
+}
+/*--------------------------------------------------------------
+# MEDIA QUERIES SECTION
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+
+  .site-navigation {
+    font-size: $font-site-navigation-tablet;
+    font-weight: 400;
+  }
+
+  .site-side-menu {
+  }
+
+  .navigation-main-menu__ul {
+  }
+
+  .navigation-main-menu__ul__li {
+  }
+  .image-logo {
+    max-width: 20%;
+  }
+  .navigation-main-menu-children {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 601px) {
+
+  .site-navigation {
+    font-size: $font-site-navigation-full;
+    font-weight: 400;
+  }
+
+  .site-side-menu {
+    padding: 5px 0 0 0;
+    height: 100%;
+  }
+
+  .navigation-main-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
+  }
+
+  .navigation-main-menu__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .navigation-main-menu__ul__li {
+    flex: 0 1 auto;
+    margin: 0 auto;
+  }
+  .image-logo {
+    max-width: 20%;
+  }
+  .navigation-main-menu-children {
+    position: static;
+  }
+}

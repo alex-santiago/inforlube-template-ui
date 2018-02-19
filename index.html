@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="User interface dashboard framework">
+  <meta name="keywords" content="all2sys, document, content, enterprise">
+  <meta name="author" content="All2Sys Solutions">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome 4.7.0 -->
+  <link rel="stylesheet" href="./js/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Application Style Sheet -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>All2sys Dashboard</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/ico">
+</head>
+<body>
+  <!-- language pack scripts -->
+  <script src="./js/language/dictionary.pt.br.js"></script>
+  <script src="./js/language/language.pt.br.js"></script>
+  <script src="./js/language/language.en.us.js"></script>
+  <script src="./js/language/language.es.es.js"></script>
+  <!-- application plugins scripts -->
+  <!-- jquery 3.2.1 -->
+  <script src="./js/jquery/3.2.1/jquery.min.js"></script>
+  <!-- jquery plugins datatables 1.10.16 -->
+  <script src="./js/jquery/plugins/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
+  <!-- slim scroll 1.3.8 -->
+  <script src="./js/slimscroll/1.3.8/jquery.slimscroll.min.js"></script>
+  <!-- spinner js 2.3.2 -->
+  <script src="./js/spinjs/2.3.2/spin.min.js"></script>
+
+  <!-- riot.js scripts initialization -->
+  <script src="./js/website-initialization/globals.js"></script>
+  <script src="./js/website-initialization/app.js"></script>
+  <script src="./js/website-initialization/ajax.js"></script>
+  <script src="./js/website-initialization/controllers.js"></script>
+  <script src="./js/website-initialization/host.js"></script>
+  <script src="./js/website-initialization/routes.js"></script>
+  <script src="./js/website-initialization/session.js"></script>
+
+  <!-- riot.js component initialization -->
+  <wrapper id="wrapper"></wrapper>
+
+  <!-- wireframe components -->
+  <script src="./tags/wire-frame/wrapper.tag.html" type="riot/tag"></script>
+  <script src="./tags/wire-frame/main-content.tag.html" type="riot/tag"></script>
+  <script src="./tags/wire-frame/site-footer.tag.html" type="riot/tag"></script>
+  <script src="./tags/wire-frame/site-header.tag.html" type="riot/tag"></script>
+  <script src="./tags/wire-frame/site-navigation.tag.html" type="riot/tag"></script>
+  <!-- <script src="./tags/wireframe/profile.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="./tags/wireframe/desktop.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="./tags/wireframe/messenger.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="./tags/wireframe/advice.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="./tags/wireframe/heading.tag.html" type="riot/tag"></script> -->
+
+  <!-- framework components -->
+  <!-- <script src="framework\collapse.tag" type="riot/tag"></script> -->
+  <!-- <script src="framework\grid.tag" type="riot/tag"></script> -->
+  <!-- <script src="framework\modal.tag" type="riot/tag"></script> -->
+
+  <!-- tags components -->
+  <!-- <script src="tags\sample.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="tags\list-clients.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="tags\list-client-details.tag.html" type="riot/tag"></script> -->
+  <!-- <script src="tags\client-systems.tag.html" type="riot/tag"></script> -->
+
+  <!-- riot.js plugin -->
+  <script src="./js/riot/route.min.js"></script>
+  <script src="./js/riot/riot_compiler.min.js"></script>
+
+  <!-- script compiler riot.js -->
+  <script>
+    app.init();
+
+    var opts = {
+      lines: 12 // The number of lines to draw
+      , length: 20 // The length of each line
+      , width: 10 // The line thickness
+      , radius: 30 // The radius of the inner circle
+      , scale: 1 // Scales overall size of the spinner
+      , corners: 1 // Corner roundness (0..1)
+      , color: '#000' // #rgb or #rrggbb or array of colors
+      , opacity: 0.25 // Opacity of the lines
+      , rotate: 0 // The rotation offset
+      , direction: 1 // 1: clockwise, -1: counterclockwise
+      , speed: 1 // Rounds per second
+      , trail: 60 // Afterglow percentage
+      , fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+      , zIndex: 2e9 // The z-index (defaults to 2000000000)
+      , className: 'spinner' // The CSS class to assign to the spinner
+      , top: '50%' // Top position relative to parent
+      , left: '50%' // Left position relative to parent
+      , shadow: true // Whether to render a shadow
+      , hwaccel: false // Whether to use hardware acceleration
+      , position: 'absolute' // Element positioning
+    }
+
+    var spinnerTarget = document.getElementById('body')
+    var spinner = new Spinner(opts);
+  </script>
+
+</body>
+</html>

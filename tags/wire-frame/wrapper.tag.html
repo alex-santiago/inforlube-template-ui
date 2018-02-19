@@ -1,0 +1,32 @@
+<wrapper class="wrapper">
+  <!-- component html code -->
+  <!-- site main header -->
+  <site-header class="site-header"></site-header>
+
+  <div class="wrapper__content">
+
+    <!-- site main navigation -->
+    <site-navigation class="site-navigation"></site-navigation>
+
+    <!-- site main content -->
+    <main-content class="main-content"></main-content>
+
+  </div>
+
+  <!-- site main footer -->
+  <site-footer class="site-footer"></site-footer>
+
+  <!-- component javascript code -->
+  <script>
+
+    const tag = this;
+
+    this.on('mount', function() {
+      document.getElementsByClassName('site-side-menu')[0].classList.add("site-side-menu-off");
+    });
+
+    this.on('before-mount', function() {
+    });
+
+  </script>
+</wrapper>

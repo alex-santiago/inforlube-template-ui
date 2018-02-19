@@ -1,0 +1,22 @@
+<site-footer>
+  <!-- component html code -->
+  <div class="site-footer">
+      <!--<yield></yield>-->
+      <p class="site-footer__copyright">{language.footer.copyright}</p>
+      <p class="site-footer__version">{siteVersion}</p>
+  </div>
+
+  <!-- component javascript code -->
+  <script>
+
+    const tag = this;
+    tag.siteVersion = "v 1.0.1";
+
+    this.on('mount', function() {
+    });
+
+    this.on('before-mount', function() {
+    });
+
+  </script>
+</site-footer>
